@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,900');
+h1{
+	font-family: 'Roboto', sans-serif;
+	font-size: 2em;
+	font-weight: 300;
+	color: #3C3C3C;
+}
+
+html{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #333333;
+	background-color: #F5F5F5;
+}
+
+body{
+	width: 70%;
+    position: absolute;
+    left: 15%;
+    height: 100%;
+    margin: 0;
+    background-color: #F5F5F5;
+}
+
+.loggingIn{
+	display: block;
+    padding: 2em;
+    text-align: center;
+}
+
+.background{
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.25);
+}
+
+.welcome{
+	text-align: center;
+	color: #FF5A5F;
+	font-size: 2em;
+	font-weight: 900;
+}
+.cardContainer{
+	    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center
+}
+
+.card{
+	display: inline-block;
+    width: 70%;
+    height: 40vh;
+    position: relative;
+    background-color: #FFFFFF;
+    margin: 7vh 0 7vh 0;
+-webkit-box-shadow: 3px 3px 22px -4px rgba(0,0,0,0.5);
+-moz-box-shadow: 3px 3px 22px -4px rgba(0,0,0,0.5);
+box-shadow: 3px 3px 22px -4px rgba(0,0,0,0.5);
+}
+
+.loggingIn{
+	    display: inline-block;
+    position: absolute;
+    width: 100%;
+    padding: 15em 0 15em 0;
+    background-color: white;
+    -webkit-box-shadow: 3px 3px 22px -4px rgba(0,0,0,0.5);
+    -moz-box-shadow: 3px 3px 22px -4px rgba(0,0,0,0.5);
+    box-shadow: 3px 3px 22px -4px rgba(0,0,0,0.5);
+    top: 20%;
+    z-index: 3;
+}
+
+.btn{
+
+}
+
+.image{
+ position: relative;
+    left: 10%;
+    /* width: fit-content; */
+    /* height: fit-content; */
+    display: inline-block;
+}
+.MyClass{
+    width: 30vh;
+    /* height: auto; */
+    position: relative;
+    left: 0%;
+    /* top: -10%; */
+    bottom: 6.5vh;
+    /* padding-bottom: 5%; */
+    display: inline-block;
+    -webkit-box-shadow: 3px 3px 22px -4px rgba(0,0,0,0.5);
+-moz-box-shadow: 3px 3px 22px -4px rgba(0,0,0,0.5);
+box-shadow: 3px 3px 22px -4px rgba(0,0,0,0.5);
+}
+
+h2{
+	color: #FF5A5F;
+	font-size: 4vh;
+	margin: 0;
+	padding: 0;
+	font-family: 'roboto';
+}
+
+.predict{
+    position: absolute;
+    cursor: pointer;
+    bottom: 2em;
+    font-size: 1em;
+    right: 6px;
+    font-family: 'roboto';
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    z-index: 3;
+    background: #FF5A5F;
+    /* padding: 0 1em 0 1em; */
+    width: 33%;
+}
+
+.popularity{
+    /* top: 0; */
+    margin: 0;
+    /* bottom: 6.5vh; */
+    display: block;
+    /* left: -30vh; */
+    font-weight: 900;
+    position: relative;
+    bottom: 4vh;
+    text-align: left;
+    border-left: 8px solid #FF5A5F;
+    padding: 0;
+    padding-left: 0.3em;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 42%;
+    height: 100%;
+    padding-right: 8%;
+}
+
+.songTitle{
+	font-weight: 300;
+	margin: 0.8em 0 0.2em 0;
+}
+
+h3{
+	font-weight: 100;
+	color: #808080;
+	font-family: 'roboto'
+}
+
+.artists{
+	margin-top: 0;
+}
+
+.play{
+    width: 50px;
+    height: 50px;
+    background-image: url('play.svg');
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    right: 16%;
+    /* bottom: 1em; */
+    cursor: pointer;
+    top: 41%;
+}
+
+.acoustic{
+    width: 50px;
+    height: 50px;
+    background-image: url('guitar.svg');
+    background-size: 70%;
+    border-radius: 50%;
+    background-color: #FF5A5F;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: safe;
+    align-items: flex-end;
+}
+
+.rating{
+    position: absolute;
+    /* height: 100%; */
+    top: 0;
+    right: 5px;
+    font-size: 2em;
+    margin-top: -0.1em;
+    display: inline;
+    padding: 0;
+}
+
+.acousticDescription{
+	font-weight: 300;
+    position: relative;
+    /* text-align: center; */
+    bottom: -20px;
+    margin: 0;
+    font-size: 0.7em;
+}
+
+.btn{
+	    font-family: 'roboto';
+    text-decoration: none;
+    color: #FF5A5F;
+    /* background-color: #FF5A5F; */
+    /* padding: 1.2em; */
+    /* border-radius: 50px; */
+    font-size: 1.3em;
+}
+
+.speech{
+ 	width: 50px;
+    height: 50px;
+    background-image: url('002-karaoke.svg');
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #FF5A5F;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: safe;
+    align-items: flex-end;
+}
+
+.tempo{
+ 	width: 50px;
+    height: 50px;
+    background-image: url('001-metronome.svg');
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #FF5A5F;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: safe;
+    align-items: flex-end;
+}
+
+.dance{
+    width: 50px;
+    height: 50px;
+    background-image: url('electronic-dance.svg');
+    background-size: 70%;
+    border-radius: 50%;
+    background-color: #FF5A5F;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: safe;
+    align-items: flex-end;
+}
+
+.icons{
+	display: flex;
+    position: relative;
+    justify-content: space-around;
+    position: absolute;
+    width: 85%;
+    bottom: 10%;
+}
+
