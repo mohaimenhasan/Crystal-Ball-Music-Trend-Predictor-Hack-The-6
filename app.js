@@ -7,7 +7,7 @@
  * https://developer.spotify.com/web-api/authorization-guide/#authorization_code_flow
  */
 
-var port = process.env.PORT || 8888;
+var port = process.env.PORT || 3000;
 console.log("Current port is: "+port);
 
 var express = require('express'); // Express web server framework
