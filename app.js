@@ -145,4 +145,4 @@ app.get('/refresh_token', function(req, res) {
 
 // start the server listening for requests
 app.listen(port, 
-  () => console.log("Server is running. If not defined by env var then listening on port 8888 on localhost"));
+  () => console.log("Server is running on port"+port));
