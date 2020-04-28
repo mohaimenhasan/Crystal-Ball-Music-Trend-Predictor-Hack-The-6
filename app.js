@@ -8,6 +8,7 @@
  */
 
 var port = process.env.PORT || 8888;
+console.log("Current port is: "+port);
 
 var express = require('express'); // Express web server framework
 var request = require('request'); // "Request" library
@@ -145,4 +146,4 @@ app.get('/refresh_token', function(req, res) {
 
 // start the server listening for requests
 app.listen(port, 
-  () => console.log("Server is running on port"+port));
+  () => console.log("Server is running on port "+port));
