@@ -1,145 +1,20 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Example of the Authorization Code flow with Spotify</title>
-    <link rel="stylesheet" type="text/css" href="index.css">.
-    <style type="text/css">
-      #login, #loggedin {
-        display: none;
-      }
-      .text-overflow {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        width: 500px;
-      }
-    </style>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
 
-  <body>
-     
-      <div id="login" class="loggingIn">
-        <h1>Discover the tomorrow of music through today!</h1>
-        <a href="/login" class="btn btn-primary">Log in with Spotify</a>
-      </div>
-  
-      <h1 class="welcome">
-        Projection
-      </h1>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Projection of Music Popularity" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>Song Popularity Detector</title>
+</head>
 
-      <div class="cardContainer">
-        <div class="card">
-          <div class="image">
-            
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+</body>
 
-             <div id='pre0' onclick='predict(0)' class="predict">
-              Predict
-            </div>
-          </div>
-          <div class="data">
-
-          <div class="icons">
-
-          </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="image">
-            <div id='pre1' class="predict" onclick="predict(1)">
-              Predict
-            </div>
-          </div>
-              <div class="data">
-      <div class="icons">
-
-          </div>
-          </div>
-        </div>
-         <div class="card">
-          <div class="image">
-              <div id='pre2' class="predict" onclick='predict(2)'>
-              Predict
-            </div>
-          </div>
-              <div class="data">
-      <div class="icons">
-
-          </div>
-          </div>
-        </div>
-         <div class="card">
-          <div class="image">
-              <div id='pre3' class="predict" onclick='predict(3)'>
-              Predict
-            </div>
-          </div>
-              <div class="data">
-      <div class="icons">
-
-          </div>
-          </div>
-        </div>
-         <div class="card">
-          <div class="image">
-              <div id='pre4'class="predict" onclick='predict(4)'>
-              Predict
-            </div>
-          </div>
-              <div class="data">
-      <div class="icons">
-
-          </div>
-          </div>
-        </div>
-      </div>
-<!--       <div id="loggedin">
-        <div id="user-profile">
-        </div>
-        <div id="oauth">
-        </div>
-        <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
-      </div> -->
-
-
-<!--     <script id="user-profile-template" type="text/x-handlebars-template">
-      <h1>Logged in as {{display_name}}</h1>
-      <div class="media">
-        <div class="pull-left">
-          <img class="media-object" width="150" src="{{images.0.url}}" />
-        </div>
-        <div onClick="download()">
-  <i class="material-icons">file_download</i>
-  <p>DOWNLOAD CSV FILE</p>
-</div>
-        <div class="media-body">
-          <dl class="dl-horizontal">
-            <dt>Display name</dt><dd class="clearfix">{{display_name}}</dd>
-            <dt>Id</dt><dd>{{id}}</dd>
-            <dt>Email</dt><dd>{{email}}</dd>
-            <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
-            <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
-            <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
-            <dt>Country</dt><dd>{{country}}</dd>
-          </dl>
-        </div>
-      </div>
-    </script> -->
-
-<!--     <script id="oauth-template" type="text/x-handlebars-template">
-      <h2>oAuth info</h2>
-      <dl class="dl-horizontal">
-        <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
-        <dt>Refresh token</dt><dd class="text-overflow">{{refresh_token}}></dd>
-      </dl>
-    </script> -->
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script>
-     
-    </script>
-    <script src="spotify-web-api.js"> </script>
-    <script src="script.js"> </script>
-  </body>
 </html>
