@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/css/main.5563674c.css",
-    "main.js": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/js/main.66337ae5.js",
+    "main.css": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/css/main.c01bc9ba.css",
+    "main.js": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/js/main.913d527d.js",
     "static/js/453.41df921f.chunk.js": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/js/453.41df921f.chunk.js",
-    "static/media/guitar.svg": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/media/guitar.f43544d2b82003d24a33c342de726e3a.svg",
-    "static/media/electronic-dance.svg": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/media/electronic-dance.5cf909b355e901c32600e7596408ec0c.svg",
-    "static/media/001-metronome.svg": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/media/001-metronome.fa7cc065d57d6f95b37c909477c3d1bf.svg",
-    "static/media/002-karaoke.svg": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/media/002-karaoke.bbc45779227273558006cab61edc8b48.svg",
+    "static/media/guitar.svg": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/media/guitar.3afdf9fb81dd6b66780b89d0d4f99d0f.svg",
+    "static/media/electronic-dance.svg": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/media/electronic-dance.ebb90e8df10259acc4435e7e6e3d41a4.svg",
+    "static/media/001-metronome.svg": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/media/001-metronome.c43c85df2a52e55cba14da464b992468.svg",
+    "static/media/002-karaoke.svg": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/media/002-karaoke.7eb42f9abe4953d34f5471fe0868c191.svg",
     "static/media/pause.svg": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/media/pause.60e34362b4300f741c66dc55fa4aa32d.svg",
     "index.html": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/index.html",
-    "static/media/play.svg": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/media/play.9af7b4f70fe598aa715d1f382fa923b5.svg",
-    "main.5563674c.css.map": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/css/main.5563674c.css.map",
-    "main.66337ae5.js.map": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/js/main.66337ae5.js.map",
+    "static/media/play.svg": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/media/play.549a044df3424fc9b60cc5a17b3dd4f5.svg",
+    "main.c01bc9ba.css.map": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/css/main.c01bc9ba.css.map",
+    "main.913d527d.js.map": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/js/main.913d527d.js.map",
     "453.41df921f.chunk.js.map": "/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/static/js/453.41df921f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5563674c.css",
-    "static/js/main.66337ae5.js"
+    "static/css/main.c01bc9ba.css",
+    "static/js/main.913d527d.js"
   ]
 }
