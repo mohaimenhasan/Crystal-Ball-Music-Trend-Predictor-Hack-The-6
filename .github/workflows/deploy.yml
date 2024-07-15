@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Adjust this as necessary
+      - master  # Adjust this as necessary
 
 jobs:
   deploy:
