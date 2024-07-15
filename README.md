@@ -1,46 +1,81 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# CrystalBall Popularity Detector
 
-## Available Scripts
+This project is a React application that predicts the future popularity of songs based on user data from Spotify. Users can log in with their Spotify account, view their top tracks, and get predictions about the popularity of these tracks.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Spotify Login**: Users can log in with their Spotify account.
+- **Top Tracks**: Displays the user's top tracks.
+- **Popularity Prediction**: Predicts the future popularity of each track.
+- **Audio Features**: Displays audio features like acousticness, danceability, speechiness, and tempo.
+- **Play Previews**: Allows users to play 30-second previews of the tracks directly in the app.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To run this project locally, follow these steps:
 
-### `npm test`
+1. **Clone the repository**:
+   \`\`\`bash
+   git clone <https://github.com/yourusername/song-popularity-detector.git>
+   cd song-popularity-detector
+   \`\`\`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Install dependencies**:
+   \`\`\`bash
+   npm install
+   \`\`\`
 
-### `npm run build`
+3. **Set up environment variables**:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   Create a `.env` file in the root directory and add your Spotify API credentials:
+   \`\`\`
+   REACT_APP_SPOTIFY_CLIENT_ID=your_spotify_client_id
+   REACT_APP_SPOTIFY_REDIRECT_URI=<http://localhost:3000/>
+   \`\`\`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Run the app**:
+   \`\`\`bash
+   npm start
+   \`\`\`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   The app will be available at [http://localhost:3000](http://localhost:3000).
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. **Log in with Spotify**: Click the "Log in with Spotify" button and authenticate with your Spotify account.
+2. **View Top Tracks**: After logging in, your top tracks will be displayed.
+3. **Play Previews**: Click the play button on any track to listen to a 30-second preview.
+4. **Predict Popularity**: Click the "Predict" button on any track to view the predicted popularity.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Code Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **src/api/spotify.ts**: Contains functions to interact with the Spotify API.
+- **src/components/Login.tsx**: Login component for Spotify authentication.
+- **src/Icons.tsx**: Contains icon components used in the app.
+- **src/App.tsx**: Main application component.
+- **src/App.css**: Main stylesheet for the application.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Dependencies
 
-## Learn More
+- **React**: JavaScript library for building user interfaces.
+- **Axios**: Promise-based HTTP client for the browser and Node.js.
+- **Spotify Web API**: Interface to access Spotify's data.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Screenshots
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Login Screen
+
+![Login Screen](./screenshots/login_screen.png)
+
+### Main Screen
+
+![Main Screen](./screenshots/main_screen.png)
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
