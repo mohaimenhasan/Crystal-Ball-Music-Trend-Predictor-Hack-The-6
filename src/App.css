@@ -150,11 +150,28 @@ h1,
 }
 
 .icon {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
+
+.icon:hover::before {
+  content: attr(data-tooltip-value);
+  position: absolute;
+  bottom: 125%;
+  /* Adjusted to reduce space */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 0.8em;
+  z-index: 1;
+  opacity: 0.8;
+}
+
 
 .iconDescription {
   font-weight: 300;

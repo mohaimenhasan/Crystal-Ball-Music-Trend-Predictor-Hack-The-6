@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getTokenFromUrl, getUserData, getUserTopTracks } from './api/spotify';
+import { getAudioFeatures, getTokenFromUrl, getUserData, getUserTopTracks } from './api/spotify';
 import './App.css';
 import pauseIcon from './assets/pause.svg'; // Add a pause icon
 import playIcon from './assets/play.svg';
@@ -8,10 +8,11 @@ import { AcousticIcon, DanceIcon, SpeechIcon, TempoIcon } from './Icons';
 
 const App: React.FC = () => {
   const [token, setToken] = useState<string | null>(null);
-  const [, setProfile] = useState<any>(null);
+  const [profile, setProfile] = useState<any>(null);
   const [topTracks, setTopTracks] = useState<any[]>([]);
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [playingTrackId, setPlayingTrackId] = useState<string | null>(null);
+  const [audioFeatures, setAudioFeatures] = useState<{ [key: string]: any }>({});
 
   useEffect(() => {
     const tokenFromStorage = localStorage.getItem('spotifyToken');
@@ -42,7 +43,14 @@ const App: React.FC = () => {
   useEffect(() => {
     if (token) {
       getUserData(token).then(data => setProfile(data));
-      getUserTopTracks(token).then(data => setTopTracks(data.items));
+      getUserTopTracks(token).then(data => {
+        setTopTracks(data.items);
+        data.items.forEach((track: any) => {
+          getAudioFeatures(token, track.id).then(features => {
+            setAudioFeatures(prev => ({ ...prev, [track.id]: features }));
+          });
+        });
+      });
     }
   }, [token]);
 
@@ -65,13 +73,41 @@ const App: React.FC = () => {
     });
   };
 
+  const predict = (index: number) => {
+    const predictedPop = [61, 75, 32, 65, 52, 7, 73, 90, 63, 55, 42, 56, 80, 68, 63, 71, 45, 53, 45, 56]; // replace with your data
+    let actualPopularity = 50; // replace with actual popularity
+    const netChange = predictedPop[index] - actualPopularity;
+    const finalPopularity = Math.min(Math.max(actualPopularity + netChange, 0), 100); // Ensure popularity is between 0 and 100
+    animateValue(`pre${index}`, 0, netChange, 2000);
+    animateValue(`rating${index}`, actualPopularity, finalPopularity, 2000); // Ensure popularity is between 0 and 100
+  };
+
+  const animateValue = (id: string, start: number, end: number, duration: number) => {
+    const range = end - start;
+    const increment = end > start ? 1 : -1;
+    const stepTime = Math.abs(Math.floor(duration / range));
+    const obj = document.getElementById(id);
+    let current = start;
+
+    if (obj) {
+      const timer = setInterval(() => {
+        current += increment;
+        obj.innerHTML = end > start ? `+${current}` : `${current}`;
+        if (current === end) {
+          clearInterval(timer);
+        }
+      }, stepTime);
+    }
+  };
+
   return (
     <div className="App">
       {!token ? (
         <Login />
       ) : (
         <div>
-          <h1 className="welcome">Projection</h1>
+          <h1 className="welcome">🔮 Crystal Ball Projection 🔮</h1>
+          <h1 className="welcome">{profile?.display_name}</h1>
           <div className="cardContainer">
             {topTracks.map((track, index) => (
               <div className="card" key={track.id}>
@@ -93,20 +129,22 @@ const App: React.FC = () => {
                   </div>
                   <div className="rating" id={`rating${index}`}>{track.popularity}</div>
                 </div>
-                <div className="icons">
-                  <div className="icon">
-                    <AcousticIcon />
+                {audioFeatures[track.id] && (
+                  <div className="icons">
+                    <div className="icon" data-tooltip-value={`${(audioFeatures[track.id].acousticness * 100).toFixed(1)}%`}>
+                      <AcousticIcon />
+                    </div>
+                    <div className="icon" data-tooltip-value={`${(audioFeatures[track.id].danceability * 100).toFixed(1)}%`}>
+                      <DanceIcon />
+                    </div>
+                    <div className="icon" data-tooltip-value={`${(audioFeatures[track.id].speechiness * 100).toFixed(1)}%`}>
+                      <SpeechIcon />
+                    </div>
+                    <div className="icon" data-tooltip-value={`${audioFeatures[track.id].tempo.toFixed(1)}`}>
+                      <TempoIcon />
+                    </div>
                   </div>
-                  <div className="icon">
-                    <DanceIcon />
-                  </div>
-                  <div className="icon">
-                    <SpeechIcon />
-                  </div>
-                  <div className="icon">
-                    <TempoIcon />
-                  </div>
-                </div>
+                )}
               </div>
             ))}
           </div>
@@ -114,31 +152,6 @@ const App: React.FC = () => {
       )}
     </div>
   );
-};
-
-const predict = (index: number) => {
-  const predictedPop = [61, 75, 32, 65, 52, 7, 73, 90, 63, 55, 42, 56, 80, 68, 63, 71, 45, 53, 45, 56]; // replace with your data
-  const netChange = predictedPop[index] - 50; // replace 50 with actual popularity
-  animateValue(`pre${index}`, 0, netChange, 2000);
-  animateValue(`rating${index}`, 50, predictedPop[index], 2000); // replace 50 with actual popularity
-};
-
-const animateValue = (id: string, start: number, end: number, duration: number) => {
-  const range = end - start;
-  const increment = end > start ? 1 : -1;
-  const stepTime = Math.abs(Math.floor(duration / range));
-  const obj = document.getElementById(id);
-  let current = start;
-
-  if (obj) {
-    const timer = setInterval(() => {
-      current += increment;
-      obj.innerHTML = end > start ? `+${current}` : `${current}`;
-      if (current === end) {
-        clearInterval(timer);
-      }
-    }, stepTime);
-  }
 };
 
 export default App;
