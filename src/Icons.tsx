@@ -2,8 +2,8 @@ import React from 'react';
 import styles from './Icons.module.css';
 import metronome from './assets/001-metronome.svg';
 import karaoke from './assets/002-karaoke.svg';
-import guitar from './assets/guitar.svg';
 import dance from './assets/electronic-dance.svg';
+import guitar from './assets/guitar.svg';
 
 export const AcousticIcon: React.FC = () => (
   <div className={styles.acoustic} style={{ backgroundImage: `url(${guitar})` }} />

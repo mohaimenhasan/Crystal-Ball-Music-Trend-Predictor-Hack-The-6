@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import Login from './components/Login';
 import { getTokenFromUrl, getUserData, getUserTopTracks } from './api/spotify';
+import './App.css';
+import pauseIcon from './assets/pause.svg'; // Add a pause icon
+import playIcon from './assets/play.svg';
+import Login from './components/Login';
 import { AcousticIcon, DanceIcon, SpeechIcon, TempoIcon } from './Icons';
 
 const App: React.FC = () => {
   const [token, setToken] = useState<string | null>(null);
   const [, setProfile] = useState<any>(null);
   const [topTracks, setTopTracks] = useState<any[]>([]);
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
+  const [playingTrackId, setPlayingTrackId] = useState<string | null>(null);
 
   useEffect(() => {
     const tokenFromStorage = localStorage.getItem('spotifyToken');
@@ -33,13 +38,32 @@ const App: React.FC = () => {
       console.log("No token found");
     }
   }, []);
-  
+
   useEffect(() => {
     if (token) {
       getUserData(token).then(data => setProfile(data));
       getUserTopTracks(token).then(data => setTopTracks(data.items));
     }
   }, [token]);
+
+  const playPreview = (track: any) => {
+    if (audio) {
+      audio.pause();
+      setAudio(null);
+      setPlayingTrackId(null);
+      if (audio.src === track.preview_url) {
+        return; // If the same track is clicked again, stop playing
+      }
+    }
+    const newAudio = new Audio(track.preview_url);
+    newAudio.play();
+    setAudio(newAudio);
+    setPlayingTrackId(track.id);
+
+    newAudio.addEventListener('ended', () => {
+      setPlayingTrackId(null);
+    });
+  };
 
   return (
     <div className="App">
@@ -52,32 +76,35 @@ const App: React.FC = () => {
             {topTracks.map((track, index) => (
               <div className="card" key={track.id}>
                 <div className="image">
-                  <img src={track.album.images[0].url} className="MyClass" alt={track.name} />
+                  <img src={track.album.images[0].url} className="albumArt" alt={track.name} />
                   <div id={`pre${index}`} className="predict" onClick={() => predict(index)}>
                     Predict
                   </div>
+                  {track.preview_url && (
+                    <button className="playButton" onClick={() => playPreview(track)}>
+                      <img src={playingTrackId === track.id ? pauseIcon : playIcon} alt="Play/Pause" />
+                    </button>
+                  )}
                 </div>
                 <div className="data">
-                  <h1 className="songTitle">{track.name}</h1>
-                  <h3 className="artists">{track.artists[0].name}</h3>
+                  <div className="trackInfo">
+                    <h1 className="songTitle">{track.name}</h1>
+                    <h3 className="artists">{track.artists[0].name}</h3>
+                  </div>
                   <div className="rating" id={`rating${index}`}>{track.popularity}</div>
                 </div>
                 <div className="icons">
-                  <div className="acoustic">
+                  <div className="icon">
                     <AcousticIcon />
-                    <h3 className="acousticDescription">Acousticness</h3>
                   </div>
-                  <div className="dance">
+                  <div className="icon">
                     <DanceIcon />
-                    <h3 className="acousticDescription">Danceability</h3>
                   </div>
-                  <div className="speech">
+                  <div className="icon">
                     <SpeechIcon />
-                    <h3 className="acousticDescription">Speechiness</h3>
                   </div>
-                  <div className="tempo">
+                  <div className="icon">
                     <TempoIcon />
-                    <h3 className="acousticDescription">Tempo</h3>
                   </div>
                 </div>
               </div>
