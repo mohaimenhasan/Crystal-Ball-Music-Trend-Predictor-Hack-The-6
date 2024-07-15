@@ -1,6 +1,8 @@
 
 # CrystalBall Popularity Detector
 
+[![Deployment Status](https://github.com/mohaimenhasan/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/actions/workflows/deploy.yml/badge.svg)](https://github.com/mohaimenhasan/Crystal-Ball-Music-Trend-Predictor-Hack-The-6/actions/workflows/deploy.yml)
+
 This project is a React application that predicts the future popularity of songs based on user data from Spotify. Users can log in with their Spotify account, view their top tracks, and get predictions about the popularity of these tracks.
 
 ## Features
