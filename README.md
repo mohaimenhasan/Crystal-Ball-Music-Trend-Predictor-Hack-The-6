@@ -62,16 +62,6 @@ To run this project locally, follow these steps:
 - **Axios**: Promise-based HTTP client for the browser and Node.js.
 - **Spotify Web API**: Interface to access Spotify's data.
 
-## Screenshots
-
-### Login Screen
-
-![Login Screen](./screenshots/login_screen.png)
-
-### Main Screen
-
-![Main Screen](./screenshots/main_screen.png)
-
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
